@@ -1,64 +1,101 @@
-const input = document.querySelector("#add");
-const list = document.querySelector("#list");
-var el = document.getElementsByTagName('li');
+const cout = console.log
+if (localStorage.getItem('userData') == null) {
+    const dataformat = {
+        incompleteArr: {
+            size: 0,
+            data: []
+        },
+        completeArr: {
+            size: 0,
+            data: []
+        }
+    }
+    localStorage.setItem('userData', JSON.stringify(dataformat))
+}
 
-// this function will allow us to add elements when we click the button
+const charCodeCheck = (eve) => {
+    if ((eve.which || eve.keyCode) === 13) EnteringInput()
+}
 
-function inputLength() {
-    return input.value.length
+function emptyCheck(input) {
+    if (input.length == 0 || input.indexOf(' ') == 0) {
+        document.getElementById("TaskInput").value = ""
+        alert("Task cannot be empty")
+        return false
+    }
+    return true
+}
+
+const taskbxCons = (TaskCalled) => {
+    const taskTe = document.createElement('p')
+    const taskBx = document.createElement('div')
+    const taskActionBar = document.createElement('div')
+    const taskDone = document.createElement('button')
+    const taskDel = document.createElement('button')
+
+    const DoneAction = () => {
+        document.getElementById("CompletedBox").append(taskTe)
+        taskTe.className = "taskTe"
+
+        taskBx.remove()
+    }
+
+    const DeleteAction = () => {
+        taskBx.remove()
+    }
+
+    const ButtonAppear = () => {
+        taskDone.style.visibility = "visible"
+        taskDel.style.visibility = "visible"
+    }
+
+    const ButtonGone = () => {
+        taskDone.style.visibility = "hidden"
+        taskDel.style.visibility = "hidden"
+    }
+
+    taskBx.className = "taskB"
+    taskTe.className = "taskTe1"
+    taskActionBar.className = "text-center space-x-2"
+
+    taskDel.className = "delBt"
+    taskDel.style.visibility = "hidden"
+    taskDone.className = "doneBt"
+    taskDone.style.visibility = "hidden"
+
+    taskTe.innerHTML = TaskCalled
+    taskDone.innerHTML = "Done"
+    taskDel.innerHTML = "Delete"
+
+    taskBx.addEventListener('mouseenter', ButtonAppear)
+    taskBx.addEventListener('mouseleave', ButtonGone)
+    taskDone.addEventListener("click", DoneAction)
+    taskDel.addEventListener("click", DeleteAction)
+
+    taskActionBar.append(taskDone)
+    taskActionBar.append(taskDel)
+    taskBx.append(taskTe)
+    taskBx.append(taskActionBar)
+
+    document.getElementById("TaskBox").prepend(taskBx)
 
 }
 
 
+const EnteringInput = () => {
+    cout("JS: you just add some thing")
+    const taskIn = document.getElementById("TaskInput").value
 
-
-btn.onclick = function() {
-    var txt = input.value;
-    li = document.createElement('li');
-    li.innerHTML = txt;
-    list.insertBefore(li, list.childNodes[0]);
-    li.appendChild(dBtn);
-
-    var dBtn = document.createElement("button");
-    dBtn.appendChild(document.createTextNode("Delete"));
-
-
-    dBtn.addEventListener("click", deleteListItem);
-
-
-    input.value = '';
-    if (txt == '') {
-        alert('Task cannot be empty');
-    }
-
-};
-
-
-function deleteListItem() {
-    li.classList.add("delete");
-}
-
-
-
-//this function will allow us to check the clicked elements
-list.onclick = function(ev) {
-    if (ev.target.tagName == 'LI') {
-        ev.target.classList.toggle('checked');
-    }
-};
-
-function addListAfterKeyPress() {
-    if (inputLength() == '' && event.which === 13) {
-        alert('Task cannot be empty');
-
-    } else if (inputLength() > 0 && event.which === 13) {
-        var txt = input.value;
-        li = document.createElement('li');
-        li.innerHTML = txt;
-        list.insertBefore(li, list.childNodes[0]);
-        deleteBt()
-        input.value = '';
+    if (emptyCheck(taskIn)) {
+        taskbxCons(taskIn)
+            //clear text
+        document.getElementById("TaskInput").value = ""
     }
 }
 
-input.addEventListener("keypress", addListAfterKeyPress)
+const complTaskadding = (complTask) => {
+    const taskTe = document.createElement('p')
+    taskTe.innerHTML = complTask
+    document.getElementById("CompletedBox").append(taskTe)
+    taskTe.className = "taskTe"
+}

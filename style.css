@@ -1,5 +1,5 @@
 body {
-    background-color: #29282c;
+    background-color: #f7bb0e;
     text-align: center;
 }
 
@@ -9,68 +9,138 @@ div {
 
 h1 {
     font-family: 'Prompt', sans-serif;
+    color: #f00000;
     font-size: 30px;
     font-weight: 600;
 }
 
-#add {
-    border: 2px solid #210440;
-    border-color: #210440;
+input {
+    border: 3px solid #f962a7;
+    border-color: #f7bb0e;
     padding: 5px 15px;
     border-radius: 5px;
     background-color: #ffffff;
     font-size: 20px;
     font-family: 'Prompt', sans-serif;
+    color: #f7bb0e;
     transition: all 0.75s ease;
 }
 
-#btn {
-    border: 2px solid #29282c;
+.inputCl:focus {
+    border: 3px solid #f7bb0e;
+}
+
+#enter {
+    border: 3px solid #f00000;
     padding: 5px 15px;
     border-radius: 5px;
     color: #ffffff;
-    background-color: #29282c;
+    background-color: #f00000;
     font-size: 20px;
     font-family: 'Prompt', sans-serif;
     transition: all 0.75s ease;
 }
 
-#btn :hover {
-    font-size: 22px;
+.mainFont {
     font-family: 'Prompt', sans-serif;
 }
 
-ul {
-    text-align: left;
-    margin-top: 20px;
+#enter:hover {
+    border: 3px solid #f7bb0e;
+    background-color: #f7bb0e;
+    font-size: 21px;
+    font-family: 'Prompt', sans-serif;
 }
 
-li {
+#taskList {
+    font-family: 'Prompt', sans-serif;
+    text-align: left;
+    padding: 5px 5px;
+    color: #f00000;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+#completedList {
+    font-family: 'Prompt', sans-serif;
+    text-align: left;
+    padding: 5px 5px;
+    color: #f00000;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+#completedBox {
     font-family: 'Prompt', sans-serif;
     list-style: none;
     padding: 10px 20px;
-    color: #29282c;
+    color: #f7bb0e;
     text-transform: ;
     font-weight: 600;
     margin-bottom: 10px;
     background-color: #ffffff;
-    border-bottom: 2px solid #29282c;
     transition: all 0.75s ease;
 }
 
-li:hover {
-    border: 2px solid #29282c;
-    transition: all 0.50s ease;
+#TaskBox {
+    font-family: 'Prompt', sans-serif;
+    color: #f7bb0e;
+    padding: 10px 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background-color: none;
+    transition: all 0.75s ease;
+}
+
+.taskB {
+    margin-top: 10px;
+    margin-left: 20px;
+    border: 2px solid #f7bb0e;
     border-radius: 5px;
+    font-size: 15px;
+    padding: 5px 20px;
+    background-color: #ffffff;
 }
 
-.checked {
-    font-style: italic;
+.doneBt {
+    font-family: 'Prompt', sans-serif;
+    list-style: none;
+    padding: ;
+    color: #f7bb0e;
+    font-weight: 600;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    transition: all 0.75s ease;
+}
+
+.delBt {
+    font-family: 'Prompt', sans-serif;
+    list-style: none;
+    padding: ;
+    color: #f00000;
+    font-weight: 600;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    transition: all 0.75s ease;
+}
+
+.taskTe {
+    font-family: 'Prompt', sans-serif;
+    color: #f7bb0e;
+    padding: 5px 20px;
+    padding-top: 20px;
+    text-align: left;
     text-decoration: line-through;
+    font-size: 20px;
 }
 
-.delete {
-    display: none;
+.taskTe1 {
+    font-family: 'Prompt', sans-serif;
+    padding: 5px 20px;
+    text-align: left;
+    font-size: 15px;
 }
-
-;

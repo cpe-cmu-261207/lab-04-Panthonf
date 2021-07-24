@@ -12,30 +12,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="">
-    <div class="box mt-5 rounded-lg md:max-w-screen-lg max-w-screen-sm mx-auto p-10 h-auto shadow-lg ring-1 ring-gray-300 justify-center pt-12  ">
-
+    <div class="box mt-5 rounded-lg md:max-w-screen-lg max-w-screen-sm mx-auto p-10 h-auto shadow-lg ring-4 ring-yellow-400 justify-center pt-12  ">
 
         <h1>Minimal Todo List</h1>
+        </a>
 
-        <div class="flex pt-6 justify-center">
 
-            <input class="rounded md:rounded-lg " id="add">
-            <div class="pl-6">
-                <div id="btn">
-                    <button>Add</button>
-                </div>
+        <div class="flex justify-center">
+            <div class="pr-6 pt-6">
+                <input class="inputCl" type='text' id="TaskInput" onkeypress="charCodeCheck(event)">
+
             </div>
-        </div>
-        <ul id="list">
+            <div class="pt-6">
+                <button class="border-2 p-1" id="enter" onclick="EnteringInput()">Add</button>
 
-        </ul>
+            </div>
+
+        </div>
+        <div class="pt-6 ">
+            <h3 id="taskList">Task :</h3>
+        </div>
+
+        <div id="TaskBox" class="">
+
+        </div>
+
+        <div class="pt-6">
+            <h3 id="completedList">Completed :</h3>
+
+
+        </div>
+        <div id="CompletedBox" class=" rounded  my-2 p-1">
+        </div>
     </div>
 
-
-    <script type="text/javascript" src="script.js"></script>
 </body>
+
+
 
 </html>
