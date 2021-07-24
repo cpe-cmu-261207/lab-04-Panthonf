@@ -13,7 +13,7 @@ h1 {
     font-weight: 600;
 }
 
-#userInput {
+#add {
     border: 2px solid #210440;
     border-color: #210440;
     padding: 5px 15px;
@@ -24,7 +24,7 @@ h1 {
     transition: all 0.75s ease;
 }
 
-#enter {
+#btn {
     border: 2px solid #29282c;
     padding: 5px 15px;
     border-radius: 5px;
@@ -35,7 +35,7 @@ h1 {
     transition: all 0.75s ease;
 }
 
-#enter :hover {
+#btn :hover {
     font-size: 22px;
     font-family: 'Prompt', sans-serif;
 }
@@ -46,10 +46,11 @@ ul {
 }
 
 li {
+    font-family: 'Prompt', sans-serif;
     list-style: none;
     padding: 10px 20px;
     color: #29282c;
-    text-transform: capitalize;
+    text-transform: ;
     font-weight: 600;
     margin-bottom: 10px;
     background-color: #ffffff;
@@ -63,53 +64,13 @@ li:hover {
     border-radius: 5px;
 }
 
-#bt2 {
-    font-family: 'Prompt', sans-serif;
-    font-weight: 800;
-    background-color: none;
-    border: none;
-    float: right;
-    color: #29282c;
-}
-
-#bt2:hover {
-    font-family: 'Prompt', sans-serif;
-    font-weight: 900;
-    background-color: none;
-    color: #29282c;
-    border-radius: 5px;
-}
-
-#bt1 {
-    font-family: 'Prompt', sans-serif;
-    font-weight: 800;
-    background-color: none;
-    border: none;
-    float: right;
-    color: #d61717;
-}
-
-li>button {
-    font-family: 'Prompt', sans-serif;
-    font-weight: 800;
-    background-color: none;
-    border: none;
-    float: right;
-    color: #d61717;
-}
-
-.done {
-    color: #29282c;
+.checked {
+    font-style: italic;
     text-decoration: line-through;
 }
 
 .delete {
-    font-family: 'Prompt', sans-serif;
-    font-weight: 800;
-    background-color: none;
-    border: none;
-    float: right;
-    color: #d61717;
-    float: right;
     display: none;
 }
+
+;

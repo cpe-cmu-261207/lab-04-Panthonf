@@ -1,55 +1,64 @@
-var enterButton = document.getElementById("enter")
-var input = document.getElementById("userInput")
-var ul = document.querySelector("ul")
-var item = document.getElementsByTagName("li")
+const input = document.querySelector("#add");
+const list = document.querySelector("#list");
+var el = document.getElementsByTagName('li');
+
+// this function will allow us to add elements when we click the button
 
 function inputLength() {
     return input.value.length
 
 }
 
-function listLength() {
-    return item.length;
-}
 
-function createListElement() {
-    var li = document.createElement("li"); //create li
-    li.appendChild(document.createTextNode(input.value)); //make text in li
-    ul.append(li) //add li to ul
-    input.value = ""; //reset input
 
-    function crossOut() {
-        li.classList.toggle("done")
 
-    }
-
-    li.addEventListener("click", crossOut);
+btn.onclick = function() {
+    var txt = input.value;
+    li = document.createElement('li');
+    li.innerHTML = txt;
+    list.insertBefore(li, list.childNodes[0]);
+    li.appendChild(dBtn);
 
     var dBtn = document.createElement("button");
     dBtn.appendChild(document.createTextNode("Delete"));
-    li.appendChild(dBtn);
-    dBtn.addEventListener("click", deleteListItem)
 
-    function deleteListItem() {
-        li.classList.add("delete");
 
+    dBtn.addEventListener("click", deleteListItem);
+
+
+    input.value = '';
+    if (txt == '') {
+        alert('Task cannot be empty');
     }
 
+};
+
+
+function deleteListItem() {
+    li.classList.add("delete");
 }
 
-function addListClick() {
-    if (inputLength() > 0) {
-        createListElement();
 
+
+//this function will allow us to check the clicked elements
+list.onclick = function(ev) {
+    if (ev.target.tagName == 'LI') {
+        ev.target.classList.toggle('checked');
     }
-}
+};
 
 function addListAfterKeyPress() {
-    if (inputLength() > 0 && event.which === 13) {
-        createListElement();
+    if (inputLength() == '' && event.which === 13) {
+        alert('Task cannot be empty');
+
+    } else if (inputLength() > 0 && event.which === 13) {
+        var txt = input.value;
+        li = document.createElement('li');
+        li.innerHTML = txt;
+        list.insertBefore(li, list.childNodes[0]);
+        deleteBt()
+        input.value = '';
     }
 }
 
-
-enterButton.addEventListener("click", addListClick);
-input.addEventListener("keypress", addListAfterKeyPress);
+input.addEventListener("keypress", addListAfterKeyPress)
