@@ -1,18 +1,4 @@
 const cout = console.log
-if (localStorage.getItem('userData') == null) {
-    const dataformat = {
-        incompleteArr: {
-            size: 0,
-            data: []
-        },
-        completeArr: {
-            size: 0,
-            data: []
-        }
-    }
-    localStorage.setItem('userData', JSON.stringify(dataformat))
-}
-
 const charCodeCheck = (eve) => {
     if ((eve.which || eve.keyCode) === 13) EnteringInput()
 }
@@ -98,4 +84,18 @@ const complTaskadding = (complTask) => {
     taskTe.innerHTML = complTask
     document.getElementById("CompletedBox").append(taskTe)
     taskTe.className = "taskTe"
+}
+
+if (localStorage.getItem('userData') == null) {
+    const dataformat = {
+        incompleteArr: {
+            size: 0,
+            data: []
+        },
+        completeArr: {
+            size: 0,
+            data: []
+        }
+    }
+    localStorage.setItem('userData', JSON.stringify(dataformat))
 }
